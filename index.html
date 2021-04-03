@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <main>
+    <h1>Weight Management</h1>
+    <section class="metabolism">
+        <div class="calculator">
+            <h2>Metabolic Calculator</h2>
+            <form method="post" action="/phpmotors/accounts/">
+                <input type="radio" id="male" name="gender" value="male" checked>
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br>
+                <label for="weight">Weight:</label><br>
+                <input type="number" id="weight" name="weight" required ><br>
+                <label for="height">Height (inches):</label><br>
+                <input type="number" id="height" name="height" required ><br>
+                <label for="age">Age:</label><br>
+                <input type="number" id="age" name="age" required ><br>
+                <label for="activityLevel">Activity Level:</label><br>
+                <select name="activityLevel" id="activityLevel" required>
+                    <option value="1.05">Sedentary</option>
+                    <option value="1.2">Low Activity</option>
+                    <option value="1.4">Active</option>
+                    <option value="1.55">Very Active</option>
+                </select><br>
+                <!-- <input type="number" id="activityLevel" name="activityLevel" required ><br> -->
+                <button type="button" id="calcbtn" class="calcbtn">Calculate</button>
+            </form>
+            <h4>Resting metabolic rate: <span id="rmr">0</span></h4>
+            <h4>Metabolic rate with activity: <span id="metRate">0</span></h4>
+        </div>
+        <div class="activityDetails">
+            <ul>
+                <li>
+                    <h3>Activity Levels</h3>
+                </li>
+                <li>
+                    Sedentary: Read or watch TV for typical activity <strong>(1.05)</strong>
+                </li>
+                <li>
+                    Low Activity: less than 30 minutes of moderate or vigorous activity plus your normal daily routine <strong>(1.2)</strong>
+                </li>
+                <li>
+                    Active: 30-60 minutes of moderate or vigorous activity plus your daily routine <strong>(1.4)</strong>
+                </li>
+                <li>
+                    Very Active: greater than 60 minutes of moderate or vigorous activity plus your daily routine <strong>(1.55)</strong>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="weightLoss">
+        <h2>Weekly Weight Loss Goal</h2>
+            <label for="lbsPerWk">Pounds per week:</label><br>
+            <select name="lbsPerWk" id="lbsPerWk" required>
+                <option value="0.5">1/2 lb</option>
+                <option value="1">1 lb</option>
+                <option value="1.5">1 1/2 lbs</option>
+                <option value="2">2 lbs</option>
+            </select><br>
+            <button type="button" id="calcLbs" class="calcbtn">Calculate</button>
+        </form>
+            <p>*Rounded to nearest 100 calories.</p>
+            <p>If calorie plan is less than calculated amount, just eat a few more calories to make up the difference.</p>
+            <p>If calorie plan seems high, just increase your activity a little each day.</p>
+        <h4>Daily calorie intake for weight loss goal: <span id="metRateLbs">0</span></h4>
+        <div id="foodCategories">
+        </div>
+    </section>
+    </main> 
+    <footer>
+        &copy;<span id="year"></span> John Stavast | Weight Management | Lesson 6
+    </footer>
+    <script src="dietPlans.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
